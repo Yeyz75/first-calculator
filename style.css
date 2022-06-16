@@ -14,6 +14,7 @@ body {
 
 h3 {
   color: #d4ecdd;
+  text-decoration-line: underline;
 }
 
 .center-img-blur {
@@ -60,7 +61,7 @@ h3 {
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
-  box-shadow: 5px 5px 2.5px #152d35, -3px -3px 6px #d4ecdd;
+  box-shadow: 5px 5px 2.5px #152d35;
   outline: none;
 }
 
@@ -69,15 +70,20 @@ h3 {
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
   gap: 10px;
-  background-color: rgb(195, 255, 127);
+}
+
+/* Commonality among items */
+.item-common {
+  display: flex;
+  justify-content: center;
+}
+.item-0,
+.item-1 {
+  flex-direction: column;
 }
 
 .item-0 {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #5ed6fa;
   grid-row: 1 / 4;
   grid-column: 1 / 4;
   gap: 10px;
@@ -85,58 +91,87 @@ h3 {
 }
 
 .item-1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #97acb6;
   grid-row: 1 / 5;
   grid-column: 4 / 5;
 }
 .item-2 {
-  display: flex;
   flex-direction: row;
-  justify-content: center;
-  background-color: #756959;
   grid-row: 4 / 5;
   grid-column: 1 / 4;
+}
+
+/* Button Designs */
+/* Commonality among buttons .common */
+.item-common > div > button {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  padding: 2px 24px;
+  font-size: 18px;
+  border-radius: 0.5em;
+  transition: all 0.3s;
+  box-shadow: 5px 5px 2.5px #152d35;
+  outline: none;
+  cursor: pointer;
+  font-family: sans-serif;
+  height: 48px;
+}
+
+.item-common > div {
+  display: flex;
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.item-0 > div {
+  justify-content: space-evenly;
+  padding: 10px 0 10px 0;
+}
+
+.item-0 div button {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Commonality among buttons "hover" */
+.item-common > div > button:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+.item-1 > div {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 10px 0px;
+}
+
+.item-2 > div {
+  justify-content: space-evenly;
+  padding: 20px 0 10px 0;
 }
 
 .control-operation {
   display: flex;
   justify-content: center;
   gap: 20px;
-  background-color: bisque;
   border-radius: 0px 0px 25px 25px;
 }
 
-/* Button Designs */
-.item-0 > div {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  flex-basis: 100%;
-  padding: 10px 0 10px 0;
-  /*  background-color: violet; */
-}
-
-.item-0 > div > button {
+.control-operation > button {
   color: #090909;
   padding: 2px 24px;
   font-size: 18px;
   border-radius: 0.5em;
-  align-items: center;
   background-color: #fff;
   border: 1px solid #e8e8e8;
   transition: all 0.3s;
-  box-shadow: 5px 5px 2.5px #152d35, -3px -3px 6px #d4ecdd;
+  box-shadow: 5px 5px 2.5px #152d35;
   outline: none;
   cursor: pointer;
   font-family: sans-serif;
   height: 48px;
-  justify-content: center;
 }
 
-.item-0 > div > button:hover {
+.control-operation > button:hover {
   background: #f6f9fe;
   color: #174ea6;
 }
