@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="calculator.js"></script>
+    <script src="display.js"></script>
+    <script src="main.js" defer></script>
     <title>My Calculator</title>
   </head>
   <body>
@@ -13,7 +16,8 @@
         <h3>Calculadora Minimalista</h3>
         <div class="grid-container">
           <div class="display-number">
-            <input type="number" class="numbers"/>
+            <div class="previous-value"></div>
+            <div class="actual-value"></div>
           </div>
           <div class="button-number">
             <div class="item-0 item-common">
@@ -35,17 +39,17 @@
             </div>
             <div class="item-1 item-common">
               <div>
-                <button class="sum">+</button>
-                <button class="res">-</button>
-                <button class="mul">*</button>
-                <button class="div">/</button>
+                <button class="operator" value="sum">+</button>
+                <button class="operator" value="res">-</button>
+                <button class="operator" value="mul">*</button>
+                <button class="operator" value="div">/</button>
               </div>
             </div>
             <div class="item-2 item-common">
               <div>
                 <button class="button" value=".">.</button>
                 <button class="button" value="0">0</button>
-                <button value="=">=</button>
+                <button class="operator" value="igual">=</button>
               </div>
             </div>
           </div>
@@ -56,6 +60,5 @@
         </div>
       </div>
     </div>
-    <script src="main.js"></script>
   </body>
 </html>

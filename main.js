@@ -1,17 +1,26 @@
+const displayPreviousValue = document.querySelector(".previous-value");
+const displayActualValue = document.querySelector(".actual-value");
+const buttonsNumbers = document.querySelectorAll(".button");
+const buttonsOperator = document.querySelectorAll(".operator");
+const buttonDelete = document.querySelector(".deleteNumber");
+
+const display = new Display(displayPreviousValue, displayActualValue);
+
+buttonsNumbers.forEach((button) => {
+  button.addEventListener("click", () => display.addNumber(button.innerHTML));
+});
+
+buttonsOperator.forEach((button) => {
+  button.addEventListener("click", () => display.operating(button.value));
+});
+
+buttonDelete.addEventListener("click", () => {
+  display.delete();
+});
+
 /* Limpiar Pantalla */
 let numbers = document.querySelector(".numbers");
 const btnDeleteDisplay = document.querySelector(".deleteDisplay");
 btnDeleteDisplay.addEventListener("click", () => {
-  numbers.value = "";
+  display.deleteAll();
 });
-
-/* Recorrer botones y el punto*/
-document.querySelectorAll(".button").forEach((e) => {
-  e.addEventListener("click", showNumber, false);
-});
-
-/* Mostrar Numeros Pulsados En Pantalla */
-function showNumber() {
-  let btnValue = this.value;
-  numbers.value += btnValue;
-}
